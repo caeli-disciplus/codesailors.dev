@@ -1,0 +1,743 @@
+/* Base Styles */
+:root {
+    --pixel-size: 8px;
+    --primary-color: #2c2c54;       /* Deep retro purple */
+    --secondary-color: #474787;     /* Medium purple */
+    --accent-color: #aa44ff;        /* Vibrant pixel purple */
+    --light-color: #f8f8f8;        /* Light background */
+    --dark-color: #22223b;         /* Dark background */
+    --text-color: #333333;         /* Standard text */
+    --text-light: #666666;         /* Light text */
+    --pixel-green: #44aa44;       /* Retro green */
+    --pixel-blue: #4488aa;        /* Retro blue */
+    --transition-speed: 0.2s;
+    --border-radius: 2px;
+}
+
+body {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(170, 68, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(68, 170, 68, 0.05) 0%, transparent 50%);
+    min-height: 100vh;
+    image-rendering: pixelated;
+}
+
+/* Pixel grid background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(230, 230, 230, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230, 230, 230, 0.3) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Import pixel font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Header - Pixel Art Title Screen */
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 0 var(--dark-color);
+    position: relative;
+    z-index: 100;
+    border-bottom: 4px solid var(--accent-color);
+    image-rendering: pixelated;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--accent-color) 0px,
+        var(--accent-color) 4px,
+        transparent 4px,
+        transparent 8px,
+        var(--pixel-green) 8px,
+        var(--pixel-green) 12px,
+        transparent 12px,
+        transparent 16px
+    );
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--pixel-blue) 0px,
+        var(--pixel-blue) 4px,
+        transparent 4px,
+        transparent 8px
+    );
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 0 var(--dark-color), 6px 6px 0 var(--accent-color);
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    border: 3px solid;
+    border-image: linear-gradient(45deg, var(--accent-color), var(--pixel-green)) 1;
+    image-rendering: pixelated;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: -8px;
+    right: -8px;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--accent-color) 0px,
+        var(--accent-color) 4px,
+        transparent 4px,
+        transparent 8px
+    );
+}
+
+/* Pixel art sailboat icon */
+h1::before {
+    content: '⛵';
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 0 var(--dark-color);
+    animation: sail 3s ease-in-out infinite;
+}
+
+@keyframes sail {
+    0%, 100% { transform: translateY(-50%) rotate(0deg); }
+    50% { transform: translateY(-50%) rotate(2deg); }
+}
+
+nav {
+    margin-top: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+nav li {
+    position: relative;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+    padding: 0.5rem 1rem;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--accent-color), var(--pixel-green)) 1;
+    background: rgba(255,255,255,0.1);
+    border-radius: var(--border-radius);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: -4px;
+    right: -4px;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--accent-color) 0px,
+        var(--accent-color) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease;
+}
+
+nav a:hover::after {
+    opacity: 1;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.2);
+    box-shadow: 2px 2px 0 var(--dark-color);
+}
+
+/* Pixel dividers */
+nav li:not(:last-child)::after {
+    content: '▮';
+    position: absolute;
+    right: -1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color);
+    font-size: 0.6rem;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Main Content - Pixel Art Canvas */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    min-height: 80vh;
+    position: relative;
+    image-rendering: pixelated;
+}
+
+/* Section - Pixel Art Panel */
+section {
+    background: white;
+    border: 4px solid;
+    border-image: linear-gradient(45deg, var(--accent-color), var(--pixel-green)) 1;
+    border-radius: var(--border-radius);
+    box-shadow: 6px 6px 0 var(--dark-color);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    transition: all var(--transition-speed) ease;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--accent-color) 0px,
+        var(--accent-color) 4px,
+        transparent 4px,
+        transparent 8px
+    );
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: -8px;
+    right: -8px;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--pixel-blue) 0px,
+        var(--pixel-blue) 4px,
+        transparent 4px,
+        transparent 8px
+    );
+}
+
+section:hover {
+    transform: translateY(-4px);
+    box-shadow: 8px 8px 0 var(--dark-color);
+}
+
+/* Section Headings - Pixel Art Title */
+h2 {
+    color: var(--secondary-color);
+    padding-bottom: 1rem;
+    margin-top: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0 var(--accent-color);
+    border-bottom: 4px solid;
+    border-image: linear-gradient(90deg, var(--accent-color), var(--pixel-green)) 1;
+    display: inline-block;
+}
+
+h2::before {
+    content: '▲';
+    position: absolute;
+    right: -20px;
+    top: -5px;
+    font-size: 1rem;
+    color: var(--accent-color);
+    animation: pixel-blink 1s infinite;
+}
+
+@keyframes pixel-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* About Section - Pixel Art Character */
+.profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.profile-image {
+    flex: 0 0 150px;
+    position: relative;
+}
+
+#profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid;
+    border-image: linear-gradient(45deg, var(--accent-color), var(--pixel-green)) 1;
+    background: white;
+    image-rendering: pixelated;
+    position: relative;
+    z-index: 1;
+}
+
+#profile-pic::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 4px solid;
+    border-image: linear-gradient(45deg, var(--pixel-blue), var(--accent-color)) 1;
+    z-index: -1;
+    background: repeating-conic-gradient(
+        from 0deg,
+        var(--accent-color) 0deg,
+        var(--accent-color) 15deg,
+        transparent 15deg,
+        transparent 30deg,
+        var(--pixel-green) 30deg,
+        var(--pixel-green) 45deg,
+        transparent 45deg,
+        transparent 60deg
+    );
+    animation: pixel-spin 10s linear infinite;
+}
+
+@keyframes pixel-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.bio {
+    flex: 1;
+    min-width: 300px;
+}
+
+.bio p {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    position: relative;
+    padding-left: 20px;
+}
+
+.bio p::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    animation: pixel-blink 1s infinite;
+}
+
+.bio p:first-child {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bio p:first-child::before {
+    content: '🎮';
+    font-size: 1rem;
+}
+
+/* Skill tags - Pixel Art Badges */
+.skills {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.skills::before {
+    content: '🎮';
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    color: var(--accent-color);
+    animation: pixel-blink 1s infinite;
+}
+
+.skill-tag {
+    background: white;
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border: 3px solid;
+    border-image: linear-gradient(45deg, var(--accent-color), var(--pixel-green)) 1;
+    border-radius: var(--border-radius);
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    box-shadow: 3px 3px 0 var(--dark-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skill-tag::before {
+    content: '▰';
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    font-size: 0.6rem;
+    color: var(--accent-color);
+}
+
+.skill-tag::after {
+    content: '▰';
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 0.6rem;
+    color: var(--pixel-green);
+}
+
+.skill-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 4px 4px 0 var(--dark-color);
+    border-image: linear-gradient(45deg, var(--pixel-green), var(--accent-color)) 1;
+}
+
+/* Contact Form - Pixel Art Terminal */
+#contact-form {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    background: white;
+    padding: 2rem;
+    border: 4px solid;
+    border-image: linear-gradient(45deg, var(--accent-color), var(--pixel-green)) 1;
+    border-radius: var(--border-radius);
+    box-shadow: 6px 6px 0 var(--dark-color);
+    position: relative;
+}
+
+#contact-form::before {
+    content: '💾';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 0 var(--dark-color);
+    animation: pixel-blink 1s infinite;
+}
+
+#contact-form::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--pixel-blue) 0px,
+        var(--pixel-blue) 4px,
+        transparent 4px,
+        transparent 8px
+    );
+}
+
+.form-group {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 3px solid var(--accent-color);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: all var(--transition-speed) ease;
+    background-color: white;
+    box-shadow: 2px 2px 0 var(--dark-color);
+    image-rendering: pixelated;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+    color: var(--text-light);
+    font-style: italic;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--pixel-green);
+    box-shadow: 3px 3px 0 var(--dark-color);
+    background-color: white;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+#submit-btn {
+    background: linear-gradient(135deg, var(--accent-color), var(--pixel-green));
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 3px 3px 0 var(--dark-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+#submit-btn::before {
+    content: '▶';
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+}
+
+#submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 var(--dark-color);
+    background: linear-gradient(135deg, var(--pixel-green), var(--accent-color));
+}
+
+#submit-btn:active {
+    transform: translateY(1px);
+}
+
+#submit-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(255,255,255,0.2) 2px,
+        rgba(255,255,255,0.2) 4px
+    );
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+#submit-btn:hover::after {
+    opacity: 1;
+}
+
+#form-message {
+    margin-top: 2rem;
+    padding: 1.2rem;
+    border-radius: 8px;
+    display: none;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer - Pixel Art Status Bar */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    margin-top: 3rem;
+    border-top: 4px solid var(--accent-color);
+    font-size: 0.8rem;
+    image-rendering: pixelated;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--accent-color) 0px,
+        var(--accent-color) 4px,
+        transparent 4px,
+        transparent 8px
+    );
+}
+
+footer p {
+    margin: 0;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg, var(--accent-color), var(--pixel-green)) 1;
+    display: inline-block;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    color: white;
+    font-size: 1.2rem;
+    transition: all var(--transition-speed) ease;
+    text-shadow: 2px 2px 0 var(--dark-color);
+}
+
+.social-link:hover {
+    color: var(--pixel-green);
+    transform: scale(1.2);
+    text-shadow: 3px 3px 0 var(--dark-color);
+}
+
+.footer-credit {
+    margin-top: 1.5rem;
+    opacity: 0.8;
+}
+
+.footer-credit a {
+    color: var(--pixel-green);
+    text-decoration: none;
+}
+
+.footer-credit::before {
+    content: '🎮';
+    margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin: 0.5rem 0;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 1rem;
+    }
+}
