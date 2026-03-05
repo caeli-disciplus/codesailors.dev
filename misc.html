@@ -1,227 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miscellaneous - CodeSailors.dev</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miscellaneous — CodeSailors.dev</title>
+  <meta name="description" content="Projects, experiments, and odds and ends from João Ribeiro at CodeSailors.dev.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <h1 class="site-title"><a href="index.html" class="site-title-link">CodeSailors.dev</a></h1>
-            <nav class="main-nav">
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="posts.html" class="nav-link">Posts</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li><a href="misc.html" class="nav-link active">Miscellaneous</a></li>
-                </ul>
-            </nav>
+
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <h1 class="site-title">
+        <a href="index.html" class="site-title-link">CodeSailors.dev</a>
+      </h1>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html"   class="nav-link">Home</a></li>
+          <li><a href="posts.html"   class="nav-link">Posts</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="misc.html"    class="nav-link active">Misc</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-header">
+      <div class="container">
+        <span class="section-tag">The Hold</span>
+        <h2 class="page-title">Miscellaneous</h2>
+        <div class="page-divider"></div>
+        <p class="page-subtitle">Projects, experiments, and cargo that didn't fit neatly anywhere else.</p>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="misc-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Voyages</span>
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">Ships I've built and launched into the wild</p>
         </div>
-    </header>
 
-    <main>
-        <section class="page-header misc-header">
-            <div class="container">
-                <h2 class="page-title">Miscellaneous</h2>
-                <div class="page-divider" style="--accent-color: #9B59B6;"></div>
-                <p class="page-subtitle">A collection of projects, experiments, resources, and other interesting things that don't fit neatly into other categories.</p>
+        <div class="projects-grid">
+
+          <div class="project-card reveal" style="--icon-bg: rgba(196,151,58,0.08); --icon-border: rgba(196,151,58,0.25); --icon-color: var(--gold);">
+            <div class="project-icon">
+              <i class="fas fa-code-branch"></i>
             </div>
-        </section>
-
-        <section class="projects-section">
-            <div class="container">
-                <div class="section-header">
-                    <h3 class="section-title">Featured Projects</h3>
-                    <div class="section-divider" style="--accent-color: #FF6B35;"></div>
-                </div>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-icon" style="--icon-color: #FF6B35;">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h4 class="project-title">Open Source Contributions</h4>
-                        <p class="project-description">My contributions to various open source projects, including web frameworks, developer tools, and community initiatives.</p>
-                        <a href="#" class="project-link">View on GitHub</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-icon" style="--icon-color: #1ABC9C;">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                        <h4 class="project-title">UI/UX Experiments</h4>
-                        <p class="project-description">Collection of user interface experiments, design system components, and interactive prototypes exploring modern web design.</p>
-                        <a href="#" class="project-link">Browse Experiments</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-icon" style="--icon-color: #9B59B6;">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h4 class="project-title">AI & Machine Learning</h4>
-                        <p class="project-description">Exploring the intersection of web development and artificial intelligence through practical implementations and demos.</p>
-                        <a href="#" class="project-link">See AI Projects</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-icon" style="--icon-color: #FFB347;">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h4 class="project-title">Mobile Applications</h4>
-                        <p class="project-description">Cross-platform mobile apps built with React Native and Flutter, showcasing modern mobile development techniques.</p>
-                        <a href="#" class="project-link">View Mobile Apps</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-icon" style="--icon-color: #E65C00;">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
-                        <h4 class="project-title">Web Games & Experiments</h4>
-                        <p class="project-description">Fun side projects including browser-based games, interactive demos, and creative coding experiments.</p>
-                        <a href="#" class="project-link">Play Games</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-icon" style="--icon-color: #3498DB;">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h4 class="project-title">Data Visualization</h4>
-                        <p class="project-description">Interactive data visualizations and dashboards built with D3.js, Chart.js, and other visualization libraries.</p>
-                        <a href="#" class="project-link">Explore Visualizations</a>
-                    </div>
-                </div>
+            <h3 class="project-title">Open Source Contributions</h3>
+            <p class="project-description">Contributions to web frameworks, developer tools, and community initiatives. Giving back to the fleet.</p>
+            <div class="tech-stack">
+              <p class="tech-title">Topics</p>
+              <div class="tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Tooling</span>
+              </div>
             </div>
-        </section>
+            <br>
+            <a href="#" class="project-link">View on GitHub</a>
+          </div>
 
-        <section class="resources-section">
-            <div class="container">
-                <div class="section-header">
-                    <h3 class="section-title">Developer Resources</h3>
-                    <div class="section-divider" style="--accent-color: #1ABC9C;"></div>
-                </div>
-                <div class="resources-grid">
-                    <div class="resource-card">
-                        <h4 class="resource-title">Recommended Tools</h4>
-                        <p class="resource-description">My curated list of essential development tools, extensions, and utilities that boost productivity.</p>
-                        <a href="#" class="resource-link">View Toolkit</a>
-                    </div>
-
-                    <div class="resource-card">
-                        <h4 class="resource-title">Learning Resources</h4>
-                        <p class="resource-description">Books, courses, tutorials, and other educational materials for web developers at all levels.</p>
-                        <a href="#" class="resource-link">Explore Resources</a>
-                    </div>
-
-                    <div class="resource-card">
-                        <h4 class="resource-title">Code Snippets</h4>
-                        <p class="resource-description">Useful code snippets, gists, and templates for common web development tasks and challenges.</p>
-                        <a href="#" class="resource-link">Browse Snippets</a>
-                    </div>
-
-                    <div class="resource-card">
-                        <h4 class="resource-title">Design Assets</h4>
-                        <p class="resource-description">Free design resources including UI kits, icons, illustrations, and other assets for developers.</p>
-                        <a href="#" class="resource-link">Download Assets</a>
-                    </div>
-                </div>
+          <div class="project-card reveal" style="--icon-bg: rgba(0,221,181,0.07); --icon-border: rgba(0,221,181,0.22); --icon-color: var(--teal);">
+            <div class="project-icon">
+              <i class="fas fa-paint-brush"></i>
             </div>
-        </section>
-
-        <section class="about-section">
-            <div class="container">
-                <div class="section-header">
-                    <h3 class="section-title">About This Site</h3>
-                    <div class="section-divider" style="--accent-color: #9B59B6;"></div>
-                </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>This website serves as my digital home - a place to share my work, thoughts, and experiments with the developer community. Built with modern web technologies and designed with attention to performance, accessibility, and user experience.</p>
-                        <p>The site is continuously evolving as I explore new techniques, frameworks, and design approaches. It's not just a portfolio, but also a testing ground for web development innovations.</p>
-                    </div>
-                    <div class="tech-stack">
-                        <h4 class="tech-title">Built With:</h4>
-                        <div class="tech-tags">
-                            <span class="tech-tag" style="--tag-color: #FF6B35;">HTML5</span>
-                            <span class="tech-tag" style="--tag-color: #1ABC9C;">CSS3</span>
-                            <span class="tech-tag" style="--tag-color: #9B59B6;">JavaScript</span>
-                            <span class="tech-tag" style="--tag-color: #3498DB;">Responsive Design</span>
-                            <span class="tech-tag" style="--tag-color: #FFB347;">Modern CSS</span>
-                            <span class="tech-tag" style="--tag-color: #E65C00;">Accessibility</span>
-                        </div>
-                    </div>
-                </div>
+            <h3 class="project-title">UI/UX Experiments</h3>
+            <p class="project-description">Interface experiments, design system components, and interactive prototypes exploring the boundaries of modern web design.</p>
+            <div class="tech-stack">
+              <p class="tech-title">Topics</p>
+              <div class="tech-tags">
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">Animations</span>
+              </div>
             </div>
-        </section>
+            <br>
+            <a href="#" class="project-link">Browse Experiments</a>
+          </div>
 
-        <section class="experiments-section">
-            <div class="container">
-                <div class="section-header">
-                    <h3 class="section-title">Interactive Experiments</h3>
-                    <div class="section-divider" style="--accent-color: #FF6B35;"></div>
-                </div>
-                <div class="experiment-showcase">
-                    <div class="experiment-item">
-                        <div class="experiment-preview" style="--experiment-color: #FF6B35;">
-                            <div class="experiment-content">
-                                <i class="fas fa-mouse-pointer"></i>
-                                <span>Hover Me</span>
-                            </div>
-                        </div>
-                        <h4 class="experiment-title">Interactive Hover Effects</h4>
-                        <p class="experiment-description">Exploring creative hover animations and transitions.</p>
-                    </div>
-
-                    <div class="experiment-item">
-                        <div class="experiment-preview" style="--experiment-color: #1ABC9C;">
-                            <div class="experiment-content">
-                                <i class="fas fa-sliders-h"></i>
-                                <span>Drag Me</span>
-                            </div>
-                        </div>
-                        <h4 class="experiment-title">Draggable Elements</h4>
-                        <p class="experiment-description">Implementing smooth drag-and-drop interactions.</p>
-                    </div>
-
-                    <div class="experiment-item">
-                        <div class="experiment-preview" style="--experiment-color: #9B59B6;">
-                            <div class="experiment-content">
-                                <i class="fas fa-palette"></i>
-                                <span>Click Me</span>
-                            </div>
-                        </div>
-                        <h4 class="experiment-title">Color Transitions</h4>
-                        <p class="experiment-description">Smooth color morphing and gradient animations.</p>
-                    </div>
-                </div>
+          <div class="project-card reveal" style="--icon-bg: rgba(155,127,212,0.08); --icon-border: rgba(155,127,212,0.25); --icon-color: #9B7FD4;">
+            <div class="project-icon">
+              <i class="fas fa-robot"></i>
             </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-copyright">&copy; 2026 CodeSailors.dev. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link" title="GitHub" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="social-link" title="LinkedIn" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="social-link" title="Twitter" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link" title="Email" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
+            <h3 class="project-title">AI & Machine Learning</h3>
+            <p class="project-description">Exploring the intersection of web development and artificial intelligence through practical implementations and demos.</p>
+            <div class="tech-stack">
+              <p class="tech-title">Topics</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">TensorFlow</span>
+                <span class="tech-tag">APIs</span>
+              </div>
             </div>
+            <br>
+            <a href="#" class="project-link">See AI Projects</a>
+          </div>
+
+          <div class="project-card reveal" style="--icon-bg: rgba(226,133,58,0.07); --icon-border: rgba(226,133,58,0.25); --icon-color: #E2853A;">
+            <div class="project-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="project-title">Mobile Applications</h3>
+            <p class="project-description">Cross-platform mobile apps built with React Native and Flutter, showcasing modern mobile development techniques.</p>
+            <div class="tech-stack">
+              <p class="tech-title">Topics</p>
+              <div class="tech-tags">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Flutter</span>
+              </div>
+            </div>
+            <br>
+            <a href="#" class="project-link">View Mobile Apps</a>
+          </div>
+
+          <div class="project-card reveal" style="--icon-bg: rgba(196,151,58,0.08); --icon-border: rgba(196,151,58,0.25); --icon-color: var(--gold);">
+            <div class="project-icon">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <h3 class="project-title">Web Games</h3>
+            <p class="project-description">Browser-based games, interactive demos, and creative coding experiments — because not everything needs to be serious.</p>
+            <div class="tech-stack">
+              <p class="tech-title">Topics</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Canvas</span>
+                <span class="tech-tag">WebGL</span>
+                <span class="tech-tag">Game Dev</span>
+              </div>
+            </div>
+            <br>
+            <a href="#" class="project-link">Play Games</a>
+          </div>
+
+          <div class="project-card reveal" style="--icon-bg: rgba(0,221,181,0.07); --icon-border: rgba(0,221,181,0.22); --icon-color: var(--teal);">
+            <div class="project-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="project-title">Data Visualization</h3>
+            <p class="project-description">Interactive visualizations and dashboards built with D3.js, Chart.js, and other libraries — turning raw data into charts worth reading.</p>
+            <div class="tech-stack">
+              <p class="tech-title">Topics</p>
+              <div class="tech-tags">
+                <span class="tech-tag">D3.js</span>
+                <span class="tech-tag">SVG</span>
+                <span class="tech-tag">Charts</span>
+              </div>
+            </div>
+            <br>
+            <a href="#" class="project-link">Explore Visualizations</a>
+          </div>
+
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- Interactive Experiments -->
+    <section class="misc-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Lab</span>
+          <h2 class="section-title">Interactive Experiments</h2>
+          <p class="section-subtitle">Things I built just to see if I could</p>
+        </div>
+
+        <div class="experiment-showcase">
+
+          <div class="experiment-item reveal">
+            <div class="experiment-preview" style="--experiment-color: linear-gradient(135deg, #0D2248, #1E4780);">
+              <div class="experiment-content">
+                <i class="fas fa-compass"></i>
+                <span>Pure CSS</span>
+              </div>
+            </div>
+            <h4 class="experiment-title">Pure CSS Compass</h4>
+            <p class="experiment-description">A fully animated compass — no JavaScript, just CSS.</p>
+          </div>
+
+          <div class="experiment-item reveal">
+            <div class="experiment-preview" style="--experiment-color: linear-gradient(135deg, #05101F, rgba(0,221,181,0.15));">
+              <div class="experiment-content">
+                <i class="fas fa-water"></i>
+                <span>SVG Waves</span>
+              </div>
+            </div>
+            <h4 class="experiment-title">Animated SVG Waves</h4>
+            <p class="experiment-description">Procedurally animated wave paths using SVG and rAF.</p>
+          </div>
+
+          <div class="experiment-item reveal">
+            <div class="experiment-preview" style="--experiment-color: linear-gradient(135deg, #163460, rgba(196,151,58,0.15));">
+              <div class="experiment-content">
+                <i class="fas fa-palette"></i>
+                <span>Canvas</span>
+              </div>
+            </div>
+            <h4 class="experiment-title">Nautical Chart Generator</h4>
+            <p class="experiment-description">Procedural chart art using Canvas API and noise functions.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section class="misc-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Provisions</span>
+          <h2 class="section-title">Resources</h2>
+          <p class="section-subtitle">Tools and references kept aboard the vessel at all times</p>
+        </div>
+
+        <div class="resources-grid">
+
+          <div class="resource-card reveal" style="--icon-bg: rgba(196,151,58,0.08); --icon-border: rgba(196,151,58,0.25); --icon-color: var(--gold);">
+            <div class="project-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <h3 class="resource-title">Recommended Tools</h3>
+            <p class="resource-description">My curated list of essential development tools, extensions, and utilities that boost productivity.</p>
+            <a href="#" class="resource-link">View Toolkit</a>
+          </div>
+
+          <div class="resource-card reveal" style="--icon-bg: rgba(0,221,181,0.07); --icon-border: rgba(0,221,181,0.22); --icon-color: var(--teal);">
+            <div class="project-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3 class="resource-title">Learning Resources</h3>
+            <p class="resource-description">Books, courses, tutorials, and other educational materials for web developers at all levels.</p>
+            <a href="#" class="resource-link">Explore Resources</a>
+          </div>
+
+          <div class="resource-card reveal" style="--icon-bg: rgba(155,127,212,0.08); --icon-border: rgba(155,127,212,0.25); --icon-color: #9B7FD4;">
+            <div class="project-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="resource-title">Code Snippets</h3>
+            <p class="resource-description">Useful snippets, gists, and templates for common web development tasks and challenges.</p>
+            <a href="#" class="resource-link">Browse Snippets</a>
+          </div>
+
+          <div class="resource-card reveal" style="--icon-bg: rgba(226,133,58,0.07); --icon-border: rgba(226,133,58,0.25); --icon-color: #E2853A;">
+            <div class="project-icon">
+              <i class="fas fa-vector-square"></i>
+            </div>
+            <h3 class="resource-title">Design Assets</h3>
+            <p class="resource-description">Free design resources including UI kits, icons, illustrations, and other assets for builders.</p>
+            <a href="#" class="resource-link">Download Assets</a>
+          </div>
+
+        </div>
+
+        <!-- About this site -->
+        <div class="section-header reveal" style="margin-top: 5rem;">
+          <span class="section-tag">About This Vessel</span>
+          <h2 class="section-title">Built With</h2>
+        </div>
+        <div style="text-align: center; max-width: 580px; margin: 0 auto;" class="reveal">
+          <p style="color: var(--muted); font-style: italic; margin-bottom: 1.5rem;">
+            This site serves as my digital home — a place to share work, thoughts, and experiments.
+            Built with modern web standards, no frameworks required.
+          </p>
+          <div class="tech-tags" style="justify-content: center;">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">Vanilla JS</span>
+            <span class="tech-tag">SVG</span>
+            <span class="tech-tag">Google Fonts</span>
+            <span class="tech-tag">Font Awesome</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <p class="footer-brand">CodeSailors.dev</p>
+          <p class="footer-description">
+            A personal portfolio and blog about web development, design, and technology.
+            Charting a course through the digital seas, one commit at a time.
+          </p>
+        </div>
+        <div>
+          <h5 class="footer-col-title">Navigation</h5>
+          <ul class="footer-menu">
+            <li><a href="index.html"   class="footer-link">Home</a></li>
+            <li><a href="posts.html"   class="footer-link">All Posts</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="misc.html"    class="footer-link">Miscellaneous</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer-col-title">Categories</h5>
+          <ul class="footer-menu">
+            <li><a href="posts.html" class="footer-link">Web Development</a></li>
+            <li><a href="posts.html" class="footer-link">JavaScript</a></li>
+            <li><a href="posts.html" class="footer-link">CSS</a></li>
+            <li><a href="posts.html" class="footer-link">Tools</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">// &copy; 2026 CodeSailors.dev — All rights reserved</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="contact.html" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

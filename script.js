@@ -1,258 +1,84 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contact-form');
-    const formMessage = document.getElementById('form-message');
-    const header = document.querySelector('.site-header');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.addEventListener('DOMContentLoaded', function () {
 
-    // Set active navigation link based on current page
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        if (linkPage === currentPage || (currentPage === 'index.html' && linkPage === 'index.html')) {
-            link.classList.add('active');
+  // ── Sticky header scroll class ──────────────
+  const header = document.getElementById('site-header');
+  if (header) {
+    window.addEventListener('scroll', function () {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+  }
+
+  // ── Scroll reveal ────────────────────────────
+  const revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length > 0) {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(function (el) {
+      observer.observe(el);
     });
+  }
 
-    // Smooth scrolling for navigation links (only for single-page sections if needed)
-    navLinks.forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            // Only prevent default if it's a hash link (same page)
-            if (this.getAttribute('href').startsWith('#')) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+  // ── Contact form ─────────────────────────────
+  const contactForm = document.getElementById('contact-form');
+  const formMessage = document.getElementById('form-message');
 
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    history.pushState(null, null, targetId);
-                }
-            }
-            // Otherwise let the browser handle the page navigation normally
-        });
-    });
+  if (contactForm && formMessage) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        showMessage('Please fill in all required fields.', 'error');
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        showMessage('Please enter a valid email address.', 'error');
+        return;
+      }
+
+      const submitBtn = document.getElementById('submit-btn');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="btn-text">Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+      }
+
+      // Simulate send
+      setTimeout(function () {
+        showMessage('Message received — I\'ll respond within 24–48 hours. Fair winds!', 'success');
+        contactForm.reset();
+
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span class="btn-text">Send the Signal</span><i class="fas fa-paper-plane"></i>';
         }
+
+        setTimeout(function () {
+          formMessage.style.display = 'none';
+        }, 6000);
+      }, 1400);
     });
+  }
 
-    // Contact form handling
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+  function showMessage(text, type) {
+    if (!formMessage) return;
+    formMessage.textContent = text;
+    formMessage.className = 'form-message ' + type;
+    formMessage.style.display = 'block';
+  }
 
-            // Get form values
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
 
-            // Simple validation
-            if (!name || !email || !message) {
-                showFormMessage('Please fill in all fields.', 'error');
-                return;
-            }
-
-            // Basic email validation
-            if (!validateEmail(email)) {
-                showFormMessage('Please enter a valid email address.', 'error');
-                return;
-            }
-
-            // If validation passes, show success message
-            // In a real implementation, you would send the data to a server here
-            showFormMessage('Thank you for your message! I will get back to you soon.', 'success');
-
-            // Reset form
-            contactForm.reset();
-
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
-        });
-    }
-
-    function showFormMessage(message, type) {
-        formMessage.textContent = message;
-        formMessage.className = 'form-message ' + type;
-        formMessage.style.display = 'block';
-    }
-
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
-
-    // Add subtle hover animations to post cards
-    const postCards = document.querySelectorAll('.post-card');
-    postCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-            this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.1)';
-        });
-
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.05)';
-        });
-    });
-
-    // Add subtle animations to social links
-    const socialLinks = document.querySelectorAll('.social-link');
-    socialLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px)';
-            this.style.color = 'var(--accent-color)';
-        });
-
-        link.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.color = 'var(--primary-color)';
-        });
-    });
-
-    // Add intersection observer for smooth section animations
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
-    });
-
-    // Add hover animations to skill items
-    const skillItems = document.querySelectorAll('.skill-item');
-    skillItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-        });
-
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Add animations to stat items
-    const statItems = document.querySelectorAll('.stat-item');
-    statItems.forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-
-        const statObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        statObserver.observe(item);
-    });
-
-    // Add form submission animation
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            // Simple validation
-            if (!name || !email || !message) {
-                showFormMessage('Please fill in all fields.', 'error');
-                return;
-            }
-
-            // Basic email validation
-            if (!validateEmail(email)) {
-                showFormMessage('Please enter a valid email address.', 'error');
-                return;
-            }
-
-            // Show loading state
-            const submitBtn = document.getElementById('submit-btn');
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<span class="btn-text">Sending...</span><span class="btn-icon"><i class="fas fa-spinner fa-spin"></i></span>';
-            }
-
-            // Simulate API call
-            setTimeout(() => {
-                // If validation passes, show success message
-                showFormMessage('Thank you for your message! I will get back to you soon.', 'success');
-
-                // Reset form
-                contactForm.reset();
-
-                // Reset button
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = '<span class="btn-text">Send Message</span><span class="btn-icon"><i class="fas fa-paper-plane"></i></span>';
-                }
-
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            }, 1500);
-        });
-    }
-
-    function showFormMessage(message, type) {
-        formMessage.textContent = message;
-        formMessage.className = 'form-message ' + type;
-        formMessage.style.display = 'block';
-    }
-
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
-
-    // Add newsletter form handling
-    const newsletterForm = document.querySelector('.subscribe-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const emailInput = this.querySelector('input[type="email"]');
-            const email = emailInput.value.trim();
-
-            if (!email || !validateEmail(email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-
-            // Show success feedback
-            const originalValue = emailInput.value;
-            emailInput.value = 'Thank you for subscribing! 🎉';
-            
-            setTimeout(() => {
-                emailInput.value = '';
-                emailInput.placeholder = 'Your email address';
-            }, 2000);
-        });
-    }
-
-    // Mobile menu toggle (if needed in future)
-    // Add this when implementing mobile menu button
 });

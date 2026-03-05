@@ -1,283 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeSailors.dev - Creative Developer Portfolio</title>
-    <meta name="description" content="Personal portfolio of João Ribeiro - Web developer specializing in modern, creative digital experiences">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeSailors.dev — João Ribeiro, Web Developer</title>
+  <meta name="description" content="Personal portfolio of João Ribeiro — web developer navigating the seas of modern digital experiences.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <h1 class="site-title"><a href="index.html" class="site-title-link">CodeSailors.dev</a></h1>
-            <nav class="main-nav">
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="posts.html" class="nav-link">Posts</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li><a href="misc.html" class="nav-link">Miscellaneous</a></li>
-                </ul>
-            </nav>
+
+  <!-- ── Header ─────────────────────────────── -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <h1 class="site-title">
+        <a href="index.html" class="site-title-link">CodeSailors.dev</a>
+      </h1>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html"   class="nav-link active">Home</a></li>
+          <li><a href="posts.html"   class="nav-link">Posts</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="misc.html"    class="nav-link">Misc</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ───────────────────────────────── -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-inner">
+
+          <!-- Porthole profile -->
+          <div class="hero-profile">
+            <div class="porthole-outer">
+              <div class="porthole-ring">
+                <span class="porthole-bolt"></span>
+                <span class="porthole-bolt"></span>
+                <span class="porthole-bolt"></span>
+                <span class="porthole-bolt"></span>
+              </div>
+              <div class="porthole-image-wrap">
+                <img src="assets/profile.jpg" alt="João Ribeiro — Web Developer" class="profile-image">
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero text -->
+          <div class="hero-text">
+            <p class="hero-coord">38°42'N · 9°08'W · LISBON</p>
+            <h2 class="hero-title">João Ribeiro</h2>
+            <p class="hero-subtitle">
+              Navigator of the digital seas — charting courses through code, design, and creative problem-solving.
+            </p>
+
+            <div class="hero-divider">
+              <span class="hero-divider-line"></span>
+              <span class="hero-divider-mark">log entry #001</span>
+              <span class="hero-divider-line" style="transform: scaleX(-1);"></span>
+            </div>
+
+            <p class="hero-description">
+              I build modern, performant web applications with a focus on user experience and creative engineering.
+              When not coding, I'm exploring new technologies, contributing to open source, or sharing knowledge
+              with the developer community.
+            </p>
+
+            <div class="hero-cta">
+              <a href="posts.html" class="btn btn-primary">
+                <span class="btn-text">Explore the Log</span>
+                <span class="btn-icon"><i class="fas fa-compass"></i></span>
+              </a>
+              <a href="contact.html" class="btn btn-secondary">
+                <span class="btn-text">Send a Signal</span>
+                <span class="btn-icon"><i class="fas fa-satellite-dish"></i></span>
+              </a>
+            </div>
+          </div>
         </div>
-    </header>
 
-    <main>
-        <section class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-profile">
-                        <div class="profile-image-container">
-                            <img src="assets/profile.jpg" alt="João Ribeiro - Web Developer" class="profile-image">
-                        </div>
-                    </div>
-                    
-                    <div class="hero-text">
-                        <h2 class="hero-title">
-                            <span class="hero-highlight" style="--highlight-color: #FF6B35;">Hi, I'm João Ribeiro</span>
-                        </h2>
-                        <p class="hero-subtitle">
-                            A passionate developer creating meaningful digital experiences through code and design.
-                        </p>
-                        <div class="hero-divider"></div>
-                        <p class="hero-description">
-                            I specialize in building modern, performant web applications with a focus on user experience and creative problem-solving. When I'm not coding, you can find me exploring new technologies, contributing to open source, or sharing knowledge with the developer community.
-                        </p>
-                        <div class="hero-cta">
-                            <a href="posts.html" class="btn btn-primary">
-                                <span class="btn-text">View My Work</span>
-                                <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
-                            </a>
-                            <a href="contact.html" class="btn btn-secondary">
-                                <span class="btn-text">Get In Touch</span>
-                                <span class="btn-icon"><i class="fas fa-envelope"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-skills">
-                    <div class="skills-grid">
-                        <div class="skill-item" style="--skill-color: #FF6B35;">
-                            <i class="fas fa-code"></i>
-                            <span>Web Development</span>
-                        </div>
-                        <div class="skill-item" style="--skill-color: #1ABC9C;">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Responsive Design</span>
-                        </div>
-                        <div class="skill-item" style="--skill-color: #9B59B6;">
-                            <i class="fas fa-paint-brush"></i>
-                            <span>UI/UX Design</span>
-                        </div>
-                        <div class="skill-item" style="--skill-color: #3498DB;">
-                            <i class="fas fa-database"></i>
-                            <span>API Integration</span>
-                        </div>
-                        <div class="skill-item" style="--skill-color: #FFB347;">
-                            <i class="fas fa-bolt"></i>
-                            <span>Performance</span>
-                        </div>
-                    </div>
-                </div>
+        <!-- Skills strip -->
+        <div class="hero-skills">
+          <p class="skills-label">// Charted Territories</p>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fas fa-code"></i>
+              <span>Web Development</span>
             </div>
-        </section>
-        
-        <div class="wave-divider"></div>
-
-        <section class="featured-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Featured Posts</h2>
-                    <div class="section-divider" style="--divider-color: #FF6B35;"></div>
-                    <p class="section-subtitle">Latest insights, tutorials, and thoughts on web development</p>
-                </div>
-                
-                <div class="posts-grid">
-                    <article class="post-card" style="--card-accent: #FF6B35;">
-                        <div class="post-header">
-                            <span class="post-category">Web Development</span>
-                            <span class="post-date">March 3, 2026</span>
-                        </div>
-                        <div class="post-content">
-                            <h3 class="post-title">Building Scalable Web Applications</h3>
-                            <p class="post-excerpt">Exploring modern architectures and best practices for creating web applications that scale effortlessly with growing user bases.</p>
-                        </div>
-                        <div class="post-footer">
-                            <a href="posts.html" class="read-more-link">Read More</a>
-                        </div>
-                    </article>
-
-                    <article class="post-card" style="--card-accent: #1ABC9C;">
-                        <div class="post-header">
-                            <span class="post-category">Code Quality</span>
-                            <span class="post-date">February 28, 2026</span>
-                        </div>
-                        <div class="post-content">
-                            <h3 class="post-title">The Art of Clean Code</h3>
-                            <p class="post-excerpt">Why writing maintainable, readable code is just as important as making it work, and practical tips to achieve code elegance.</p>
-                        </div>
-                        <div class="post-footer">
-                            <a href="posts.html" class="read-more-link">Read More</a>
-                        </div>
-                    </article>
-
-                    <article class="post-card" style="--card-accent: #9B59B6;">
-                        <div class="post-header">
-                            <span class="post-category">JavaScript</span>
-                            <span class="post-date">February 20, 2026</span>
-                        </div>
-                        <div class="post-content">
-                            <h3 class="post-title">JavaScript Performance Optimization</h3>
-                            <p class="post-excerpt">Deep dive into techniques and strategies to make your JavaScript applications run faster and more efficiently.</p>
-                        </div>
-                        <div class="post-footer">
-                            <a href="posts.html" class="read-more-link">Read More</a>
-                        </div>
-                    </article>
-
-                    <article class="post-card" style="--card-accent: #FFB347;">
-                        <div class="post-header">
-                            <span class="post-category">CSS</span>
-                            <span class="post-date">February 15, 2026</span>
-                        </div>
-                        <div class="post-content">
-                            <h3 class="post-title">Modern CSS Layout Techniques</h3>
-                            <p class="post-excerpt">Mastering Flexbox, Grid, and other layout methods to create responsive, maintainable user interfaces.</p>
-                        </div>
-                        <div class="post-footer">
-                            <a href="posts.html" class="read-more-link">Read More</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="section-cta">
-                    <a href="posts.html" class="btn btn-outline">
-                        <span class="btn-text">View All Posts</span>
-                        <span class="btn-icon"><i class="fas fa-book"></i></span>
-                    </a>
-                </div>
+            <div class="skill-item">
+              <i class="fas fa-mobile-alt"></i>
+              <span>Responsive Design</span>
             </div>
-        </section>
-
-        <section class="stats-section">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item" style="--stat-color: #FF6B35;">
-                        <div class="stat-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-
-                    <div class="stat-item" style="--stat-color: #1ABC9C;">
-                        <div class="stat-icon">
-                            <i class="fas fa-coffee"></i>
-                        </div>
-                        <div class="stat-number">1000+</div>
-                        <div class="stat-label">Cups of Coffee</div>
-                    </div>
-
-                    <div class="stat-item" style="--stat-color: #9B59B6;">
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="stat-number">25+</div>
-                        <div class="stat-label">Open Source Contributions</div>
-                    </div>
-
-                    <div class="stat-item" style="--stat-color: #3498DB;">
-                        <div class="stat-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="stat-number">8+</div>
-                        <div class="stat-label">Years of Experience</div>
-                    </div>
-                </div>
+            <div class="skill-item">
+              <i class="fas fa-paint-brush"></i>
+              <span>UI/UX Design</span>
             </div>
-        </section>
-
-        <section class="newsletter-section">
-            <div class="container">
-                <div class="newsletter-content">
-                    <div class="newsletter-text">
-                        <h3 class="newsletter-title">Stay Updated</h3>
-                        <p class="newsletter-description">Subscribe to get the latest articles, tutorials, and insights delivered to your inbox.</p>
-                    </div>
-                    <div class="newsletter-form">
-                        <form class="subscribe-form">
-                            <div class="form-group">
-                                <input type="email" class="form-input" placeholder="Your email address" required>
-                                <button type="submit" class="btn btn-primary">
-                                    <span class="btn-text">Subscribe</span>
-                                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-                                </button>
-                            </div>
-                        </form>
-                        <p class="newsletter-privacy">No spam, ever. Unsubscribe anytime.</p>
-                    </div>
-                </div>
+            <div class="skill-item">
+              <i class="fas fa-plug"></i>
+              <span>API Integration</span>
             </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h4 class="footer-title">CodeSailors.dev</h4>
-                    <p class="footer-description">
-                        A personal portfolio and blog about web development, design, and technology. Sharing knowledge, insights, and creative solutions.
-                    </p>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h5 class="footer-column-title">Quick Links</h5>
-                        <ul class="footer-menu">
-                            <li><a href="index.html" class="footer-link">Home</a></li>
-                            <li><a href="posts.html" class="footer-link">All Posts</a></li>
-                            <li><a href="contact.html" class="footer-link">Contact</a></li>
-                            <li><a href="misc.html" class="footer-link">Miscellaneous</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h5 class="footer-column-title">Categories</h5>
-                        <ul class="footer-menu">
-                            <li><a href="#" class="footer-link">Web Development</a></li>
-                            <li><a href="#" class="footer-link">JavaScript</a></li>
-                            <li><a href="#" class="footer-link">CSS</a></li>
-                            <li><a href="#" class="footer-link">Tools</a></li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="skill-item">
+              <i class="fas fa-bolt"></i>
+              <span>Performance</span>
             </div>
-            
-            <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2026 CodeSailors.dev. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link" title="GitHub" aria-label="GitHub" style="--social-color: #FF6B35;">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="social-link" title="LinkedIn" aria-label="LinkedIn" style="--social-color: #1ABC9C;">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="social-link" title="Twitter" aria-label="Twitter" style="--social-color: #9B59B6;">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link" title="Email" aria-label="Email" style="--social-color: #3498DB;">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- ── Wave divider ───────────────────────── -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"
+              fill="#08162E" opacity="0.9"/>
+        <path d="M0,55 C360,20 720,70 1080,35 C1260,18 1380,50 1440,55 L1440,80 L0,80 Z"
+              fill="#08162E"/>
+      </svg>
+    </div>
+
+    <!-- ── Featured Posts ─────────────────────── -->
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Captain's Log</span>
+          <h2 class="section-title">Featured Posts</h2>
+          <p class="section-subtitle">Latest dispatches from the voyage through web development</p>
+        </div>
+
+        <div class="posts-grid">
+
+          <article class="post-card reveal" style="--card-accent: #C4973A;">
+            <div class="post-header">
+              <span class="post-category">Web Development</span>
+              <span class="post-date">3 MAR 2026</span>
+            </div>
+            <div class="post-content">
+              <h3 class="post-title">Building Scalable Web Applications</h3>
+              <p class="post-excerpt">Exploring modern architectures and best practices for creating applications that scale effortlessly with growing user bases.</p>
+            </div>
+            <div class="post-footer">
+              <a href="posts.html" class="read-more-link">Read more</a>
+            </div>
+          </article>
+
+          <article class="post-card reveal" style="--card-accent: #00DDB5;">
+            <div class="post-header">
+              <span class="post-category" style="color: var(--teal); border-color: rgba(0,221,181,0.3);">Code Quality</span>
+              <span class="post-date">28 FEB 2026</span>
+            </div>
+            <div class="post-content">
+              <h3 class="post-title">The Art of Clean Code</h3>
+              <p class="post-excerpt">Why writing maintainable, readable code is just as important as making it work — and practical tips to achieve code elegance.</p>
+            </div>
+            <div class="post-footer">
+              <a href="posts.html" class="read-more-link">Read more</a>
+            </div>
+          </article>
+
+          <article class="post-card reveal" style="--card-accent: #9B7FD4;">
+            <div class="post-header">
+              <span class="post-category" style="color: #9B7FD4; border-color: rgba(155,127,212,0.3);">JavaScript</span>
+              <span class="post-date">20 FEB 2026</span>
+            </div>
+            <div class="post-content">
+              <h3 class="post-title">JavaScript Performance Optimization</h3>
+              <p class="post-excerpt">Deep dive into techniques and strategies to make your JavaScript applications run faster and more efficiently.</p>
+            </div>
+            <div class="post-footer">
+              <a href="posts.html" class="read-more-link">Read more</a>
+            </div>
+          </article>
+
+          <article class="post-card reveal" style="--card-accent: #E2853A;">
+            <div class="post-header">
+              <span class="post-category" style="color: #E2853A; border-color: rgba(226,133,58,0.3);">CSS</span>
+              <span class="post-date">15 FEB 2026</span>
+            </div>
+            <div class="post-content">
+              <h3 class="post-title">Modern CSS Layout Techniques</h3>
+              <p class="post-excerpt">Mastering Flexbox, Grid, and other layout methods to create responsive, maintainable user interfaces.</p>
+            </div>
+            <div class="post-footer">
+              <a href="posts.html" class="read-more-link">Read more</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="section-cta reveal">
+          <a href="posts.html" class="btn btn-outline">
+            <span class="btn-text">View All Posts</span>
+            <span class="btn-icon"><i class="fas fa-book-open"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Stats ──────────────────────────────── -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal" style="--stat-color: var(--gold);">
+            <div class="stat-icon"><i class="fas fa-anchor"></i></div>
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Projects Shipped</div>
+          </div>
+          <div class="stat-item reveal" style="--stat-color: var(--teal);">
+            <div class="stat-icon"><i class="fas fa-mug-hot"></i></div>
+            <div class="stat-number">1000+</div>
+            <div class="stat-label">Cups of Coffee</div>
+          </div>
+          <div class="stat-item reveal" style="--stat-color: #9B7FD4;">
+            <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+            <div class="stat-number">25+</div>
+            <div class="stat-label">OSS Contributions</div>
+          </div>
+          <div class="stat-item reveal" style="--stat-color: #E2853A;">
+            <div class="stat-icon"><i class="fas fa-star"></i></div>
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Years at Sea</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Newsletter ─────────────────────────── -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-inner reveal">
+          <span class="section-tag">Signal Beacon</span>
+          <h3 class="newsletter-title">Stay on Course</h3>
+          <p class="newsletter-desc">Subscribe to receive articles, tutorials, and dispatches from the voyage directly in your inbox.</p>
+          <form class="subscribe-form" onsubmit="handleSubscribe(event)">
+            <input type="email" class="form-input-inline" placeholder="your@email.com" required>
+            <button type="submit" class="btn btn-primary">
+              <span>Subscribe</span>
+              <i class="fas fa-paper-plane btn-icon"></i>
+            </button>
+          </form>
+          <p class="newsletter-note">// No spam. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <p class="footer-brand">CodeSailors.dev</p>
+          <p class="footer-description">
+            A personal portfolio and blog about web development, design, and technology.
+            Charting a course through the digital seas, one commit at a time.
+          </p>
+        </div>
+        <div>
+          <h5 class="footer-col-title">Navigation</h5>
+          <ul class="footer-menu">
+            <li><a href="index.html"   class="footer-link">Home</a></li>
+            <li><a href="posts.html"   class="footer-link">All Posts</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="misc.html"    class="footer-link">Miscellaneous</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer-col-title">Categories</h5>
+          <ul class="footer-menu">
+            <li><a href="posts.html" class="footer-link">Web Development</a></li>
+            <li><a href="posts.html" class="footer-link">JavaScript</a></li>
+            <li><a href="posts.html" class="footer-link">CSS</a></li>
+            <li><a href="posts.html" class="footer-link">Tools</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">// &copy; 2026 CodeSailors.dev — All rights reserved</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="contact.html" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const input = e.target.querySelector('input');
+      const original = input.value;
+      input.value = 'Subscribed — fair winds ahead!';
+      input.disabled = true;
+      setTimeout(() => {
+        input.value = '';
+        input.placeholder = 'your@email.com';
+        input.disabled = false;
+      }, 3000);
+    }
+  </script>
 </body>
 </html>
