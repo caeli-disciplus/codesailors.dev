@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title if title else "CodeSailors.dev — João Ribeiro" }}</title>
+    {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+    <link rel="stylesheet" href="/assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="site-title-link">
+                <h1 class="site-title">CodeSailors<span class="brand-dot">.dev</span></h1>
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link{% if page.url == '/' %} active{% endif %}">Home</a></li>
+                    <li><a href="/posts/" class="nav-link{% if '/posts/' in page.url and page.url != '/' %} active{% endif %}">Posts</a></li>
+                    <li><a href="/contact/" class="nav-link{% if page.url == '/contact/' %} active{% endif %}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {{ content | safe }}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p class="footer-copyright">&copy; 2026 CodeSailors.dev</p>
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/script.js"></script>
+</body>
+</html>

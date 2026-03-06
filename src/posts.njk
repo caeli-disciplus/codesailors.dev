@@ -1,0 +1,36 @@
+---
+layout: layout.njk
+title: "Posts - CodeSailors.dev"
+permalink: /posts/
+---
+
+<section class="page-header posts-header">
+    <div class="container">
+        <h2 class="page-title">All Posts</h2>
+        <div class="page-divider" style="--accent-color: #1ABC9C;"></div>
+        <p class="page-subtitle">Explore my thoughts, tutorials, and insights on web development and technology.</p>
+    </div>
+</section>
+
+<section class="posts-archive">
+    <div class="container">
+        <div class="posts-grid full-width">
+            {% for post in collections.posts | reverse %}
+            <article class="post-card full-post">
+                <div class="post-header">
+                    <span class="post-date">{{ post.date | dateLong }}</span>
+                    <span class="post-category" style="--category-color: {{ post.data.categoryColor }};">{{ post.data.categoryFull }}</span>
+                </div>
+                <div class="post-content">
+                    <h3 class="post-title">{{ post.data.title }}</h3>
+                    <p class="post-excerpt">{{ post.data.excerpt }}</p>
+                    <a href="{{ post.url }}" class="read-more-link">Read Full Article</a>
+                </div>
+                <div class="post-footer">
+                    <span class="post-time">{{ post.data.readTime }}</span>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,59 @@
+---
+layout: layout.njk
+title: "CodeSailors.dev — João Ribeiro"
+description: "Personal portfolio of João Ribeiro - Web developer specializing in modern, creative digital experiences"
+---
+
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-name-block">
+                <h2 class="hero-name">João<br>Ribeiro.</h2>
+            </div>
+            <div class="hero-detail-block">
+                <div class="hero-profile-wrap">
+                    <img src="/assets/profile.jpg" alt="João Ribeiro" class="profile-image">
+                </div>
+                <p class="hero-role">Developer &amp; Designer</p>
+                <p class="hero-subtitle">Crafting modern web experiences through code and design. Based in Lisbon.</p>
+                <div class="hero-cta">
+                    <a href="/posts/" class="btn btn-primary">View Work</a>
+                    <a href="/contact/" class="btn btn-ghost">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="posts-section">
+    <div class="container">
+        <div class="posts-header-row">
+            <h2 class="section-title">Recent Posts</h2>
+            <a href="/posts/" class="all-posts-link">All posts →</a>
+        </div>
+        <div class="posts-list">
+            {% for post in collections.posts | reverse | limit(4) %}
+            <div class="post-row">
+                <span class="post-row-cat">{{ post.data.category }}</span>
+                <a href="{{ post.url }}" class="post-row-title">{{ post.data.title }}</a>
+                <span class="post-row-date">{{ post.date | dateShort }}</span>
+                <span class="post-row-arrow">→</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-inner">
+            <p class="newsletter-label">Stay updated</p>
+            <form class="subscribe-form">
+                <div class="subscribe-group">
+                    <input type="email" class="form-input" placeholder="your@email.com" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

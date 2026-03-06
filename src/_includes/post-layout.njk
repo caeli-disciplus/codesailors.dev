@@ -1,0 +1,46 @@
+---
+layout: layout.njk
+---
+<section class="page-header posts-header">
+    <div class="container">
+        <h2 class="page-title">{{ title }}</h2>
+        <div class="page-divider" style="--accent-color: {{ categoryColor }};"></div>
+        <p class="page-subtitle">{{ excerpt }}</p>
+    </div>
+</section>
+
+<section class="posts-archive">
+    <div class="container">
+        <div class="post-meta-bar">
+            <span class="post-date">{{ date | dateLong }}</span>
+            <span class="post-category" style="--category-color: {{ categoryColor }};">{{ categoryFull }}</span>
+            <span class="post-time">{{ readTime }}</span>
+        </div>
+        <div class="post-body">
+            {{ content | safe }}
+        </div>
+
+        {% set prevPost = collections.posts | getPrevPost(page.url) %}
+        {% set nextPost = collections.posts | getNextPost(page.url) %}
+
+        <nav class="post-nav">
+            <div class="post-nav-prev">
+                {% if prevPost %}
+                    <a href="{{ prevPost.url }}" class="post-nav-link">
+                        <span class="post-nav-label">← Previous</span>
+                        <span class="post-nav-title">{{ prevPost.data.title }}</span>
+                    </a>
+                {% endif %}
+            </div>
+            <a href="/posts/" class="post-nav-all">All posts</a>
+            <div class="post-nav-next">
+                {% if nextPost %}
+                    <a href="{{ nextPost.url }}" class="post-nav-link post-nav-link--right">
+                        <span class="post-nav-label">Next →</span>
+                        <span class="post-nav-title">{{ nextPost.data.title }}</span>
+                    </a>
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+</section>

@@ -1,0 +1,114 @@
+---
+layout: layout.njk
+title: "Contact - CodeSailors.dev"
+---
+
+<section class="page-header contact-header">
+    <div class="container">
+        <h2 class="page-title">Get In Touch</h2>
+        <div class="page-divider" style="--accent-color: #FF6B35;"></div>
+        <p class="page-subtitle">Have a question, project idea, or just want to connect? I'd love to hear from you!</p>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3 class="contact-subtitle">Connect With Me</h3>
+                <p class="contact-description">Here are the best ways to reach me:</p>
+
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon" style="--icon-color: #FF6B35;">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 class="contact-method-title">Email</h4>
+                            <a href="mailto:hello@codesailors.dev" class="contact-link">hello@codesailors.dev</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon" style="--icon-color: #1ABC9C;">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 class="contact-method-title">GitHub</h4>
+                            <a href="https://github.com/codesailors" class="contact-link" target="_blank">github.com/codesailors</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon" style="--icon-color: #3498DB;">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 class="contact-method-title">LinkedIn</h4>
+                            <a href="https://linkedin.com/in/codesailors" class="contact-link" target="_blank">linkedin.com/in/codesailors</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon" style="--icon-color: #9B59B6;">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 class="contact-method-title">Twitter</h4>
+                            <a href="https://twitter.com/codesailors" class="contact-link" target="_blank">@codesailors</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-availability">
+                    <h4 class="availability-title">Availability</h4>
+                    <p class="availability-status available">Currently accepting new projects</p>
+                    <p class="availability-note">Response time: Typically within 24-48 hours</p>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                    </button>
+                </form>
+                <div id="form-message" class="form-message"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="map-section">
+    <div class="container">
+        <h3 class="section-subtitle">Location</h3>
+        <p class="location-info">Based in San Francisco, CA - Available for remote work worldwide</p>
+        <div class="map-placeholder">
+            <div class="map-icon" style="--icon-color: #FF6B35;">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <p class="map-text">Interactive map would be displayed here in a full implementation</p>
+        </div>
+    </div>
+</section>
