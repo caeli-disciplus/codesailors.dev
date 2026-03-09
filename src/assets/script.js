@@ -89,37 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    // Add hover animations to skill items
-    const skillItems = document.querySelectorAll('.skill-item');
-    skillItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-        });
-
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Add animations to stat items
-    const statItems = document.querySelectorAll('.stat-item');
-    statItems.forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-
-        const statObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        statObserver.observe(item);
-    });
-
     // Add form submission animation
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -186,30 +155,4 @@ document.addEventListener('DOMContentLoaded', function() {
         return re.test(email);
     }
 
-    // Add newsletter form handling
-    const newsletterForm = document.querySelector('.subscribe-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const emailInput = this.querySelector('input[type="email"]');
-            const email = emailInput.value.trim();
-
-            if (!email || !validateEmail(email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-
-            // Show success feedback
-            const originalValue = emailInput.value;
-            emailInput.value = 'Thank you for subscribing! 🎉';
-            
-            setTimeout(() => {
-                emailInput.value = '';
-                emailInput.placeholder = 'Your email address';
-            }, 2000);
-        });
-    }
-
-    // Mobile menu toggle (if needed in future)
-    // Add this when implementing mobile menu button
 });

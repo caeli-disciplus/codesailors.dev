@@ -14,20 +14,6 @@
     --accent-dark: #9A3415;
     --border:      #E0DBD5;
 
-    /* Legacy variable mappings — keeps other pages working */
-    --primary-bg:       var(--bg);
-    --secondary-bg:     var(--bg-alt);
-    --tertiary-bg:      #FFFFFF;
-    --text-primary:     var(--ink);
-    --text-secondary:   var(--ink-2);
-    --text-light:       var(--ink-3);
-    --accent-primary:   var(--accent);
-    --accent-secondary: #4A8C7A;
-    --accent-tertiary:  #8B6BAE;
-    --accent-light:     #D4724A;
-    --accent-dark:      var(--accent-dark);
-    --accent-blue:      #3A7DB5;
-    --border-color:     var(--border);
     --divider-color:    var(--border);
     --transition-speed: 0.2s;
     --border-radius:    2px;
@@ -326,7 +312,7 @@ img { display: block; max-width: 100%; }
 
 .no-posts-message {
     padding: 2rem 0;
-    color: var(--text-muted);
+    color: var(--ink-3);
     font-style: italic;
 }
 
@@ -336,7 +322,6 @@ img { display: block; max-width: 100%; }
     align-items: center;
     gap: 1.5rem;
     padding: 1.1rem 0;
-    padding-left: 0;
     border-bottom: 1px solid var(--border);
     border-left: 2px solid transparent;
     transition: border-left-color 0.2s, padding-left 0.2s;
@@ -437,7 +422,6 @@ img { display: block; max-width: 100%; }
     flex-shrink: 0;
 }
 
-.newsletter-privacy { display: none; }
 
 /* ─── FORMS ──────────────────────────────────────────── */
 
@@ -508,8 +492,7 @@ img { display: block; max-width: 100%; }
 /* ─── POSTS PAGE ─────────────────────────────────────── */
 
 .posts-header,
-.contact-header,
-.misc-header {
+.contact-header {
     background: var(--bg);
 }
 
@@ -563,9 +546,6 @@ img { display: block; max-width: 100%; }
     margin-top: 2.5rem;
 }
 
-.wave-divider,
-.hero-wave,
-.wave-svg { display: none; }
 
 /* Post cards (posts.html) */
 .posts-grid {
@@ -589,7 +569,7 @@ img { display: block; max-width: 100%; }
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: var(--card-accent, var(--accent));
+    background: var(--accent);
     transform: scaleX(0);
     transition: transform 0.2s;
 }
@@ -613,7 +593,7 @@ img { display: block; max-width: 100%; }
 }
 
 .post-category {
-    background: var(--card-accent, var(--accent));
+    background: var(--accent);
     color: #fff;
     padding: 0.18rem 0.55rem;
     border-radius: 1px;
@@ -650,7 +630,7 @@ img { display: block; max-width: 100%; }
     margin: 0.5rem 0;
 }
 
-post-body {
+.post-body {
     margin-top: 1rem;
 }
 
@@ -661,7 +641,7 @@ post-body {
     display: block;
 }
 
-.post-time, .post-comments {
+.post-time {
     font-size: 0.78rem;
     color: var(--ink-3);
 }
@@ -725,8 +705,6 @@ post-body {
 
 .contact-link { font-size: 0.85rem; color: var(--ink-2); }
 .contact-link:hover { color: var(--accent); }
-
-.contact-form .form-group { margin-bottom: 1.1rem; }
 
 .form-group { margin-bottom: 1.1rem; }
 
@@ -851,58 +829,6 @@ post-body {
 
 .page-next:hover { background: var(--accent-dark); transform: none; }
 
-/* ─── FOOTER (full, for other pages) ────────────────── */
-
-.footer-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.footer-about { grid-column: 1; }
-
-.footer-title {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 0.6rem;
-}
-
-.footer-description {
-    font-size: 0.83rem;
-    color: var(--ink-2);
-    line-height: 1.6;
-}
-
-.footer-links {
-    display: flex;
-    grid-column: 2 / span 2;
-    gap: 2rem;
-}
-
-.footer-column { flex: 1; }
-
-.footer-column-title {
-    font-size: 0.72rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--ink);
-    margin-bottom: 0.75rem;
-}
-
-.footer-menu li { margin-bottom: 0.4rem; }
-
-.footer-link {
-    font-size: 0.83rem;
-    color: var(--ink-2);
-    transition: color 0.2s;
-}
-
-.footer-link:hover { color: var(--ink); transform: none; }
-
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -1000,9 +926,6 @@ post-body {
     .post-row-arrow { display: none; }
 
     .contact-container { grid-template-columns: 1fr; gap: 1.25rem; }
-
-    .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
-    .footer-links { flex-direction: column; }
 
     .newsletter-inner { flex-direction: column; gap: 1.25rem; align-items: flex-start; }
     .subscribe-form { min-width: unset; width: 100%; max-width: 100%; }
