@@ -43,53 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Contact form handling
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Get form values
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            // Simple validation
-            if (!name || !email || !message) {
-                showFormMessage('Please fill in all fields.', 'error');
-                return;
-            }
-
-            // Basic email validation
-            if (!validateEmail(email)) {
-                showFormMessage('Please enter a valid email address.', 'error');
-                return;
-            }
-
-            // If validation passes, show success message
-            // In a real implementation, you would send the data to a server here
-            showFormMessage('Thank you for your message! I will get back to you soon.', 'success');
-
-            // Reset form
-            contactForm.reset();
-
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
-        });
-    }
-
-    function showFormMessage(message, type) {
-        formMessage.textContent = message;
-        formMessage.className = 'form-message ' + type;
-        formMessage.style.display = 'block';
-    }
-
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
-
     // Add subtle hover animations to post cards
     const postCards = document.querySelectorAll('.post-card');
     postCards.forEach(card => {
@@ -196,25 +149,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.innerHTML = '<span class="btn-text">Sending...</span><span class="btn-icon"><i class="fas fa-spinner fa-spin"></i></span>';
             }
 
-            // Simulate API call
-            setTimeout(() => {
-                // If validation passes, show success message
-                showFormMessage('Thank you for your message! I will get back to you soon.', 'success');
-
-                // Reset form
-                contactForm.reset();
-
-                // Reset button
+            fetch('https://formspree.io/f/mqeyeoog', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(contactForm)
+            })
+            .then(response => {
+                if (response.ok) {
+                    showFormMessage('Thank you for your message! I will get back to you soon.', 'success');
+                    contactForm.reset();
+                    setTimeout(() => { formMessage.style.display = 'none'; }, 5000);
+                } else {
+                    showFormMessage('Something went wrong. Please try again or email me directly.', 'error');
+                }
+            })
+            .catch(() => {
+                showFormMessage('Network error. Please check your connection and try again.', 'error');
+            })
+            .finally(() => {
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = '<span class="btn-text">Send Message</span><span class="btn-icon"><i class="fas fa-paper-plane"></i></span>';
                 }
-
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            }, 1500);
+            });
         });
     }
 
