@@ -6,8 +6,8 @@ categoryFull: Debugging
 categoryColor: "#C0451C"
 readTime: "4 min read"
 date: 2026-01-12
-tags: posts
-layout: post-layout.njk
+tags: cases
+layout: case-layout.njk
 ---
 
 A solo founder launched a storefront built largely with an AI scaffolding tool. Weeks after launch, customers started reporting a strange bug: on some sessions, the checkout total didn't match what was in the cart. Not always. Not on every browser. Just *sometimes* — which is the worst kind of bug.

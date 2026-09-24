@@ -1,0 +1,40 @@
+---
+layout: layout.njk
+title: "Case Notes - CodeSailors.dev"
+permalink: /cases/
+---
+
+<section class="page-header cases-header">
+    <div class="container">
+        <h2 class="page-title">Case Notes</h2>
+        <div class="page-divider"></div>
+        <p class="page-subtitle">Case notes and fixes — what broke in real AI-assisted projects and how it was solved.</p>
+    </div>
+</section>
+
+<section class="cases-archive">
+    <div class="container">
+        <div class="cases-grid full-width">
+            {% if collections.cases | length > 0 %}
+                {% for case in collections.cases | reverse %}
+                <article class="case-card full-case">
+                    <div class="case-header">
+                        <span class="case-date">{{ case.date | dateLong }}</span>
+                        <span class="case-category" style="--category-color: {{ case.data.categoryColor }};">{{ case.data.categoryFull }}</span>
+                    </div>
+                    <div class="case-content">
+                        <h3 class="case-title">{{ case.data.title }}</h3>
+                        <p class="case-excerpt">{{ case.data.excerpt }}</p>
+                        <a href="{{ case.url }}" class="read-more-link">Read Full Article</a>
+                    </div>
+                    <div class="case-footer">
+                        <span class="case-time">{{ case.data.readTime }}</span>
+                    </div>
+                </article>
+                {% endfor %}
+            {% else %}
+                <p class="no-posts-message">No posts yet — check back soon.</p>
+            {% endif %}
+        </div>
+    </div>
+</section>

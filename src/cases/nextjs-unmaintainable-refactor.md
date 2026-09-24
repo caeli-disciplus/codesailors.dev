@@ -6,8 +6,8 @@ categoryFull: Refactoring
 categoryColor: "#C0451C"
 readTime: "6 min read"
 date: 2026-03-02
-tags: posts
-layout: post-layout.njk
+tags: cases
+layout: case-layout.njk
 ---
 
 A small agency delivered a booking app to their client, assembled with AI assistance under deadline pressure. It worked. The client was happy. Then, two months later, the client wanted multi-location support — and the agency discovered they were afraid of their own codebase.

@@ -1,0 +1,46 @@
+---
+layout: layout.njk
+---
+<section class="page-header cases-header">
+    <div class="container">
+        <h2 class="page-title">{{ title }}</h2>
+        <div class="page-divider" style="--accent-color: {{ categoryColor }};"></div>
+        <p class="page-subtitle">{{ excerpt }}</p>
+    </div>
+</section>
+
+<section class="cases-archive">
+    <div class="container">
+        <div class="case-meta-bar">
+            <span class="case-date">{{ date | dateLong }}</span>
+            <span class="case-category" style="--category-color: {{ categoryColor }};">{{ categoryFull }}</span>
+            <span class="case-time">{{ readTime }}</span>
+        </div>
+        <div class="case-body">
+            {{ content | safe }}
+        </div>
+
+        {% set prevCase = collections.cases | getPrevCase(page.url) %}
+        {% set nextCase = collections.cases | getNextCase(page.url) %}
+
+        <nav class="case-nav">
+            <div class="case-nav-prev">
+                {% if prevCase %}
+                    <a href="{{ prevCase.url }}" class="case-nav-link">
+                        <span class="case-nav-label">← Previous</span>
+                        <span class="case-nav-title">{{ prevCase.data.title }}</span>
+                    </a>
+                {% endif %}
+            </div>
+            <a href="/cases/" class="case-nav-all">All cases</a>
+            <div class="case-nav-next">
+                {% if nextCase %}
+                    <a href="{{ nextCase.url }}" class="case-nav-link case-nav-link--right">
+                        <span class="case-nav-label">Next →</span>
+                        <span class="case-nav-title">{{ nextCase.data.title }}</span>
+                    </a>
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+</section>
