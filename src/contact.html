@@ -1,14 +1,14 @@
 ---
 layout: layout.njk
-title: "Tell Me What’s Broken - CodeSailors.dev"
-description: "Something broken in your AI-built app or website? Tell me the symptoms and get a free assessment and a fixed-price quote."
+title: "Free Codebase Checkup - CodeSailors.dev"
+description: "Free AI codebase checkup: tell me what your app does and what’s going wrong, and get the top 3 risks in your codebase and one fix you can apply today. No call, reply within 48 hours."
 ---
 
 <section class="page-header contact-header">
     <div class="container">
-        <h2 class="page-title">Tell me what’s broken</h2>
+        <h2 class="page-title">Get your free checkup</h2>
         <div class="page-divider"></div>
-        <p class="page-subtitle">Your app was built with AI tools and something went wrong — slow, buggy, won’t deploy, or unmaintainable. Describe it below and I’ll get back to you with an honest assessment and a fixed-price quote.</p>
+        <p class="page-subtitle">Your app was built with AI tools and something went wrong — slow, buggy, won’t deploy, or unmaintainable. Tell me what it does and what’s happening. Within 48 hours you get back the top 3 risks in your codebase, one fix you can apply today, and an honest verdict on whether anyone needs to be paid to fix the rest.</p>
     </div>
 </section>
 
@@ -81,21 +81,34 @@ description: "Something broken in your AI-built app or website? Tell me the symp
                     </div>
 
                     <div class="form-group">
+                        <label for="stack" class="form-label">What’s it built with?</label>
+                        <select id="stack" name="stack" class="form-input form-select">
+                            <option value="nextjs">Next.js / React</option>
+                            <option value="vue">Vue / Nuxt</option>
+                            <option value="python">Python / Django / FastAPI</option>
+                            <option value="node">Node / Express</option>
+                            <option value="mobile">Mobile app</option>
+                            <option value="wordpress">WordPress / site builder</option>
+                            <option value="other">Other / not sure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="subject" class="form-label">What’s broken? (one line)</label>
-                        <input type="text" id="subject" name="subject" class="form-input">
+                        <input type="text" id="subject" name="subject" class="form-input" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="message" class="form-label">The details</label>
+                        <label for="message" class="form-label">The details &mdash; what does the app do, what’s going wrong, what has the AI already tried?</label>
                         <textarea id="message" name="message" class="form-textarea" rows="6" required></textarea>
                     </div>
 
                     <button type="submit" id="submit-btn" class="submit-btn">
-                        <span class="btn-text">Send — it’s free</span>
+                        <span class="btn-text">Send &mdash; get the checkup</span>
                         <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
                     </button>
                 </form>
                 <div id="form-message" class="form-message"></div>
+                <p class="checkup-promise">Free &middot; No call &middot; Reply within 48 hours &middot; Yours to keep either way</p>
             </div>
         </div>
     </div>
