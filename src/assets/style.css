@@ -373,56 +373,6 @@ img { display: block; max-width: 100%; }
     color: var(--accent);
 }
 
-/* ─── NEWSLETTER ─────────────────────────────────────── */
-
-.newsletter-section {
-    padding: 3.5rem 0;
-    border-top: 1px solid var(--border);
-    background: var(--bg);
-}
-
-.newsletter-inner {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-}
-
-.newsletter-label {
-    font-family: 'Fraunces', serif;
-    font-size: 1rem;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--ink);
-    white-space: nowrap;
-    margin: 0;
-}
-
-.subscribe-form {
-    flex: 1;
-    min-width: 260px;
-    max-width: 400px;
-}
-
-.subscribe-group {
-    display: flex;
-}
-
-.subscribe-group .form-input {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: none;
-    flex: 1;
-}
-
-.subscribe-group .btn {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-left: none;
-    flex-shrink: 0;
-}
-
-
 /* ─── FORMS ──────────────────────────────────────────── */
 
 .form-input {
@@ -545,7 +495,6 @@ img { display: block; max-width: 100%; }
     text-align: center;
     margin-top: 2.5rem;
 }
-
 
 /* Post cards (posts.html) */
 .posts-grid {
@@ -927,8 +876,6 @@ img { display: block; max-width: 100%; }
 
     .contact-container { grid-template-columns: 1fr; gap: 1.25rem; }
 
-    .newsletter-inner { flex-direction: column; gap: 1.25rem; align-items: flex-start; }
-    .subscribe-form { min-width: unset; width: 100%; max-width: 100%; }
 }
 
 @media (max-width: 480px) {
@@ -945,20 +892,6 @@ img { display: block; max-width: 100%; }
     }
 
     .post-row-date { display: none; }
-
-    .subscribe-group { flex-direction: column; }
-
-    .subscribe-group .form-input {
-        border-radius: 2px;
-        border-right: 1px solid var(--border);
-    }
-
-    .subscribe-group .btn {
-        border-radius: 2px;
-        border-left: 1px solid var(--ink);
-        width: 100%;
-        justify-content: center;
-    }
 
     .footer-bottom { flex-direction: column; gap: 1rem; }
 }
