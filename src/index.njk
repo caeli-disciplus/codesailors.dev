@@ -1,26 +1,55 @@
 ---
 layout: layout.njk
-title: "CodeSailors.dev — João Ribeiro"
-description: "Personal portfolio of João Ribeiro - Web developer specializing in modern, creative digital experiences"
+title: "CodeSailors.dev — Rescue for AI-Built Apps & Websites"
+description: "Your app was built with AI tools and now something's broken, slow, or stuck? I fix performance, debugging and maintenance issues in AI-generated codebases. Based in Brussels, working worldwide."
 ---
 
 <section class="hero-section">
     <div class="container">
         <div class="hero-inner">
             <div class="hero-name-block">
-                <h2 class="hero-name">João<br>Ribeiro.</h2>
+                <h2 class="hero-name">Fix<br>my AI&nbsp;code.</h2>
             </div>
             <div class="hero-detail-block">
                 <div class="hero-profile-wrap">
                     <img src="/assets/profile.jpg" alt="João Ribeiro" class="profile-image">
                 </div>
-                <p class="hero-role">Developer &amp; Designer</p>
-                <p class="hero-subtitle">Crafting modern web experiences through code and design. Based in Brussels.</p>
+                <p class="hero-role">AI-Code Rescue · Jo&atilde;o Ribeiro</p>
+                <p class="hero-subtitle">You shipped fast with AI tools &mdash; Cursor, Claude, Copilot &mdash; and now something's wrong: mysterious bugs, a slow app, failing deploys, or code nobody can read. I debug, repair and harden AI-assisted apps and websites so they actually stay up.</p>
                 <div class="hero-cta">
-                    <a href="/posts/" class="btn btn-primary">View Work</a>
-                    <a href="/contact/" class="btn btn-ghost">Contact</a>
+                    <a href="/contact/" class="btn btn-primary">Get it fixed</a>
+                    <a href="#services" class="btn btn-ghost">What I fix</a>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="posts-section" id="services">
+    <div class="container">
+        <div class="posts-header-row">
+            <h2 class="section-title">What's broken? I've seen it.</h2>
+        </div>
+        <div class="posts-grid">
+            {% set issues = [
+                { cat: "Slow", title: "Pages crawl, APIs lag, builds take forever", desc: "Missing indexes, N+1 queries, unoptimized bundles, no caching &mdash; I profile first, then fix what actually matters." },
+                { cat: "Bugs", title: "It worked yesterday, now it doesn't", desc: "Flaky behaviour, broken auth, weird state bugs the AI can't reproduce &mdash; traced to the root cause and fixed properly." },
+                { cat: "Deploy", title: "Works locally, breaks in production", desc: "Environment drift, failing builds, broken CI/CD pipelines &mdash; sorted out and made repeatable." },
+                { cat: "Code", title: "Nobody can read the code anymore", desc: "Copy-pasted AI output with no structure &mdash; refactored into something a human can maintain, with tests." },
+                { cat: "Stuck", title: "The AI keeps 'fixing' and making it worse", desc: "Loop of failed patches? I take over, stabilise the codebase and get you unblocked." },
+                { cat: "Audit", title: "Is this thing even safe to run?", desc: "Security review of AI-generated code: exposed secrets, injection risks, broken permissions &mdash; before someone else finds them." }
+            ] %}
+            {% for issue in issues %}
+            <article class="post-card">
+                <div class="post-header">
+                    <span class="post-category">{{ issue.cat }}</span>
+                </div>
+                <div class="post-content">
+                    <h3 class="post-title">{{ issue.title }}</h3>
+                    <p class="post-excerpt">{{ issue.desc }}</p>
+                </div>
+            </article>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -28,8 +57,53 @@ description: "Personal portfolio of João Ribeiro - Web developer specializing i
 <section class="posts-section">
     <div class="container">
         <div class="posts-header-row">
-            <h2 class="section-title">Recent Posts</h2>
-            <a href="/posts/" class="all-posts-link">All posts →</a>
+            <h2 class="section-title">How I work</h2>
+        </div>
+        <div class="posts-grid">
+            <article class="post-card">
+                <div class="post-header">
+                    <span class="post-category">Step 1</span>
+                </div>
+                <div class="post-content">
+                    <h3 class="post-title">You describe the problem</h3>
+                    <p class="post-excerpt">One form or one email. Stack, symptoms, what the AI already tried. No discovery calls required.</p>
+                </div>
+                <div class="post-footer">
+                    <span class="post-time">Same-day reply</span>
+                </div>
+            </article>
+            <article class="post-card">
+                <div class="post-header">
+                    <span class="post-category">Step 2</span>
+                </div>
+                <div class="post-content">
+                    <h3 class="post-title">I diagnose &amp; quote</h3>
+                    <p class="post-excerpt">A fixed-price diagnosis: root cause, what the fix involves, what it costs. No open-ended hourly surprises.</p>
+                </div>
+                <div class="post-footer">
+                    <span class="post-time">Within 48 hours</span>
+                </div>
+            </article>
+            <article class="post-card">
+                <div class="post-header">
+                    <span class="post-category">Step 3</span>
+                </div>
+                <div class="post-content">
+                    <h3 class="post-title">Fixed, tested, handed over</h3>
+                    <p class="post-excerpt">The fix lands in your repo with tests and a short write-up of what was wrong, so it doesn't happen again.</p>
+                </div>
+                <div class="post-footer">
+                    <span class="post-time">Fixed scope &amp; price</span>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="posts-section">
+    <div class="container">
+        <div class="posts-header-row">
+            <h2 class="section-title">Recent fixes</h2>
         </div>
         <div class="posts-list">
             {% if collections.posts | length > 0 %}
@@ -38,12 +112,32 @@ description: "Personal portfolio of João Ribeiro - Web developer specializing i
                     <span class="post-row-cat">{{ post.data.category }}</span>
                     <a href="{{ post.url }}" class="post-row-title">{{ post.data.title }}</a>
                     <span class="post-row-date">{{ post.date | dateShort }}</span>
-                    <span class="post-row-arrow">→</span>
+                    <span class="post-row-arrow">&rarr;</span>
                 </div>
                 {% endfor %}
             {% else %}
-                <p class="no-posts-message">No posts yet — check back soon.</p>
+                <p class="no-posts-message">Case studies are on the way &mdash; in the meantime, the fastest way to know if I can help is to <a href="/contact/">tell me what's broken</a>.</p>
             {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="posts-section">
+    <div class="container">
+        <div class="posts-header-row">
+            <h2 class="section-title">Sound like your situation?</h2>
+            <a href="/contact/" class="all-posts-link">Tell me what's broken &rarr;</a>
+        </div>
+        <div class="posts-grid">
+            <article class="post-card">
+                <div class="post-content">
+                    <h3 class="post-title">Free first reply</h3>
+                    <p class="post-excerpt">Describe the issue and get an honest assessment &mdash; including when the answer is &ldquo;you don't need me for this&rdquo;.</p>
+                </div>
+                <div class="post-footer">
+                    <span class="post-time"><a href="/contact/" class="read-more-link">Get in touch</a></span>
+                </div>
+            </article>
         </div>
     </div>
 </section>
