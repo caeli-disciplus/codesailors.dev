@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title if title else "CodeSailors.dev — Rescue for AI-Built Apps & Websites" }}</title>
     {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+    <link rel="canonical" href="https://codesailors.dev{{ page.url }}">
+    <meta property="og:type" content="{% if page.url and page.url.startsWith('/cases/') and page.url !== '/cases/' %}article{% else %}website{% endif %}">
+    <meta property="og:site_name" content="CodeSailors.dev">
+    <meta property="og:title" content="{{ title if title else 'CodeSailors.dev — Rescue for AI-Built Apps & Websites' }}">
+    {% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
+    <meta property="og:url" content="https://codesailors.dev{{ page.url }}">
+    <meta property="og:image" content="https://codesailors.dev/assets/favicon-192.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ title if title else 'CodeSailors.dev — Rescue for AI-Built Apps & Websites' }}">
+    {% if description %}<meta name="twitter:description" content="{{ description }}">{% endif %}
+    <meta name="twitter:image" content="https://codesailors.dev/assets/favicon-192.png">
     <link rel="stylesheet" href="{% asset "style.css" %}">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/assets/favicon-192.png" type="image/png" sizes="192x192">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
