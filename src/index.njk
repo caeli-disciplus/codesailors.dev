@@ -25,12 +25,12 @@ description: "Your app was built with AI tools and now something's broken, slow,
     </div>
 </section>
 
-<section class="posts-section" id="services">
+<section class="cases-section" id="services">
     <div class="container">
-        <div class="posts-header-row">
+        <div class="cases-header-row">
             <h2 class="section-title">What's broken? I've seen it.</h2>
         </div>
-        <div class="posts-grid">
+        <div class="cases-grid">
             {% set issues = [
                 { cat: "Slow", title: "Pages crawl, APIs lag, builds take forever", desc: "Missing indexes, N+1 queries, unoptimized bundles, no caching &mdash; I profile first, then fix what actually matters." },
                 { cat: "Bugs", title: "It worked yesterday, now it doesn't", desc: "Flaky behaviour, broken auth, weird state bugs the AI can't reproduce &mdash; traced to the root cause and fixed properly." },
@@ -40,13 +40,13 @@ description: "Your app was built with AI tools and now something's broken, slow,
                 { cat: "Audit", title: "Is this thing even safe to run?", desc: "Security review of AI-generated code: exposed secrets, injection risks, broken permissions &mdash; before someone else finds them." }
             ] %}
             {% for issue in issues %}
-            <article class="post-card">
-                <div class="post-header">
-                    <span class="post-category">{{ issue.cat }}</span>
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-category">{{ issue.cat }}</span>
                 </div>
-                <div class="post-content">
-                    <h3 class="post-title">{{ issue.title }}</h3>
-                    <p class="post-excerpt">{{ issue.desc }}</p>
+                <div class="case-content">
+                    <h3 class="case-title">{{ issue.title }}</h3>
+                    <p class="case-excerpt">{{ issue.desc }}</p>
                 </div>
             </article>
             {% endfor %}
@@ -54,88 +54,88 @@ description: "Your app was built with AI tools and now something's broken, slow,
     </div>
 </section>
 
-<section class="posts-section">
+<section class="cases-section">
     <div class="container">
-        <div class="posts-header-row">
+        <div class="cases-header-row">
             <h2 class="section-title">How I work</h2>
         </div>
-        <div class="posts-grid">
-            <article class="post-card">
-                <div class="post-header">
-                    <span class="post-category">Step 1</span>
+        <div class="cases-grid">
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-category">Step 1</span>
                 </div>
-                <div class="post-content">
-                    <h3 class="post-title">You describe the problem</h3>
-                    <p class="post-excerpt">One form or one email. Stack, symptoms, what the AI already tried. No discovery calls required.</p>
+                <div class="case-content">
+                    <h3 class="case-title">You describe the problem</h3>
+                    <p class="case-excerpt">One form or one email. Stack, symptoms, what the AI already tried. No discovery calls required.</p>
                 </div>
-                <div class="post-footer">
-                    <span class="post-time">Same-day reply</span>
-                </div>
-            </article>
-            <article class="post-card">
-                <div class="post-header">
-                    <span class="post-category">Step 2</span>
-                </div>
-                <div class="post-content">
-                    <h3 class="post-title">I diagnose &amp; quote</h3>
-                    <p class="post-excerpt">A fixed-price diagnosis: root cause, what the fix involves, what it costs. No open-ended hourly surprises.</p>
-                </div>
-                <div class="post-footer">
-                    <span class="post-time">Within 48 hours</span>
+                <div class="case-footer">
+                    <span class="case-time">Same-day reply</span>
                 </div>
             </article>
-            <article class="post-card">
-                <div class="post-header">
-                    <span class="post-category">Step 3</span>
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-category">Step 2</span>
                 </div>
-                <div class="post-content">
-                    <h3 class="post-title">Fixed, tested, handed over</h3>
-                    <p class="post-excerpt">The fix lands in your repo with tests and a short write-up of what was wrong, so it doesn't happen again.</p>
+                <div class="case-content">
+                    <h3 class="case-title">I diagnose &amp; quote</h3>
+                    <p class="case-excerpt">A fixed-price diagnosis: root cause, what the fix involves, what it costs. No open-ended hourly surprises.</p>
                 </div>
-                <div class="post-footer">
-                    <span class="post-time">Fixed scope &amp; price</span>
+                <div class="case-footer">
+                    <span class="case-time">Within 48 hours</span>
+                </div>
+            </article>
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-category">Step 3</span>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">Fixed, tested, handed over</h3>
+                    <p class="case-excerpt">The fix lands in your repo with tests and a short write-up of what was wrong, so it doesn't happen again.</p>
+                </div>
+                <div class="case-footer">
+                    <span class="case-time">Fixed scope &amp; price</span>
                 </div>
             </article>
         </div>
     </div>
 </section>
 
-<section class="posts-section">
+<section class="cases-section">
     <div class="container">
-        <div class="posts-header-row">
+        <div class="cases-header-row">
             <h2 class="section-title">Recent fixes</h2>
         </div>
-        <div class="posts-list">
-            {% if collections.posts | length > 0 %}
-                {% for post in collections.posts | reverse | limit(4) %}
-                <div class="post-row">
-                    <span class="post-row-cat">{{ post.data.category }}</span>
-                    <a href="{{ post.url }}" class="post-row-title">{{ post.data.title }}</a>
-                    <span class="post-row-date">{{ post.date | dateShort }}</span>
-                    <span class="post-row-arrow">&rarr;</span>
+        <div class="cases-list">
+            {% if collections.cases | length > 0 %}
+                {% for case in collections.cases | reverse | limit(4) %}
+                <div class="case-row">
+                    <span class="case-row-cat">{{ case.data.category }}</span>
+                    <a href="{{ case.url }}" class="case-row-title">{{ case.data.title }}</a>
+                    <span class="case-row-date">{{ case.date | dateShort }}</span>
+                    <span class="case-row-arrow">&rarr;</span>
                 </div>
                 {% endfor %}
             {% else %}
-                <p class="no-posts-message">Case studies are on the way &mdash; in the meantime, the fastest way to know if I can help is to <a href="/contact/">tell me what's broken</a>.</p>
+                <p class="no-cases-message">Case studies are on the way &mdash; in the meantime, the fastest way to know if I can help is to <a href="/contact/">tell me what's broken</a>.</p>
             {% endif %}
         </div>
     </div>
 </section>
 
-<section class="posts-section">
+<section class="cases-section">
     <div class="container">
-        <div class="posts-header-row">
+        <div class="cases-header-row">
             <h2 class="section-title">Sound like your situation?</h2>
-            <a href="/contact/" class="all-posts-link">Tell me what's broken &rarr;</a>
+            <a href="/contact/" class="all-cases-link">Tell me what's broken &rarr;</a>
         </div>
-        <div class="posts-grid">
-            <article class="post-card">
-                <div class="post-content">
-                    <h3 class="post-title">Free first reply</h3>
-                    <p class="post-excerpt">Describe the issue and get an honest assessment &mdash; including when the answer is &ldquo;you don't need me for this&rdquo;.</p>
+        <div class="cases-grid">
+            <article class="case-card">
+                <div class="case-content">
+                    <h3 class="case-title">Free first reply</h3>
+                    <p class="case-excerpt">Describe the issue and get an honest assessment &mdash; including when the answer is &ldquo;you don't need me for this&rdquo;.</p>
                 </div>
-                <div class="post-footer">
-                    <span class="post-time"><a href="/contact/" class="read-more-link">Get in touch</a></span>
+                <div class="case-footer">
+                    <span class="case-time"><a href="/contact/" class="read-more-link">Get in touch</a></span>
                 </div>
             </article>
         </div>

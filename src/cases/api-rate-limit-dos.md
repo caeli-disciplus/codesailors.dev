@@ -6,8 +6,8 @@ categoryFull: Performance
 categoryColor: "#C0451C"
 readTime: "5 min read"
 date: 2026-02-03
-tags: posts
-layout: post-layout.njk
+tags: cases
+layout: case-layout.njk
 ---
 
 A two-person startup had a working SaaS dashboard they were proud of — built in weeks with an AI coding assistant doing most of the typing. Then real users arrived, and the app fell over. Pages took eight seconds to load. The API provider's dashboard showed request volumes that made no sense: thousands of calls per user session, quickly hitting their rate limits, and their monthly bill was climbing.

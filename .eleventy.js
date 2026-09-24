@@ -29,14 +29,14 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
 
-  eleventyConfig.addFilter("getPrevPost", function(posts, url) {
-    const sorted = [...posts].reverse();
+  eleventyConfig.addFilter("getPrevCase", function(cases, url) {
+    const sorted = [...cases].reverse();
     const index = sorted.findIndex(p => p.url === url);
     return index > 0 ? sorted[index - 1] : null;
   });
 
-  eleventyConfig.addFilter("getNextPost", function(posts, url) {
-    const sorted = [...posts].reverse();
+  eleventyConfig.addFilter("getNextCase", function(cases, url) {
+    const sorted = [...cases].reverse();
     const index = sorted.findIndex(p => p.url === url);
     return index < sorted.length - 1 ? sorted[index + 1] : null;
   });
