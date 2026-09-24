@@ -4,7 +4,7 @@ layout: layout.njk
 <section class="page-header cases-header">
     <div class="container">
         <h2 class="page-title">{{ title }}</h2>
-        <div class="page-divider" style="--accent-color: {{ categoryColor }};"></div>
+        <div class="page-divider"></div>
         <p class="page-subtitle">{{ excerpt }}</p>
     </div>
 </section>
@@ -13,7 +13,7 @@ layout: layout.njk
     <div class="container">
         <div class="case-meta-bar">
             <span class="case-date">{{ date | dateLong }}</span>
-            <span class="case-category" style="--category-color: {{ categoryColor }};">{{ categoryFull }}</span>
+            <span class="case-category">{{ categoryFull }}</span>
             <span class="case-time">{{ readTime }}</span>
         </div>
         <div class="case-body">

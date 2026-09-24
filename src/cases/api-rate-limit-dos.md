@@ -3,7 +3,6 @@ title: "Why the AI kept crashing the API it was built on"
 excerpt: "A prototype SaaS was getting throttled into oblivion by its own frontend. The fix was a caching layer and a batch endpoint — not more retries."
 category: Performance
 categoryFull: Performance
-categoryColor: "#C0451C"
 readTime: "5 min read"
 date: 2026-02-03
 tags: cases

@@ -3,7 +3,6 @@ title: "The checkout that remembered everything: debugging a ghost state bug"
 excerpt: "An AI-scaffolded storefront kept charging the wrong cart totals at random. The culprit wasn't the payment provider — it was state living in two places at once."
 category: Debugging
 categoryFull: Debugging
-categoryColor: "#C0451C"
 readTime: "4 min read"
 date: 2026-01-12
 tags: cases
