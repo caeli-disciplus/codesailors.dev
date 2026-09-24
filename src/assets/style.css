@@ -373,56 +373,6 @@ img { display: block; max-width: 100%; }
     color: var(--accent);
 }
 
-/* ─── NEWSLETTER ─────────────────────────────────────── */
-
-.newsletter-section {
-    padding: 3.5rem 0;
-    border-top: 1px solid var(--border);
-    background: var(--bg);
-}
-
-.newsletter-inner {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-}
-
-.newsletter-label {
-    font-family: 'Fraunces', serif;
-    font-size: 1rem;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--ink);
-    white-space: nowrap;
-    margin: 0;
-}
-
-.subscribe-form {
-    flex: 1;
-    min-width: 260px;
-    max-width: 400px;
-}
-
-.subscribe-group {
-    display: flex;
-}
-
-.subscribe-group .form-input {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: none;
-    flex: 1;
-}
-
-.subscribe-group .btn {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-left: none;
-    flex-shrink: 0;
-}
-
-
 /* ─── FORMS ──────────────────────────────────────────── */
 
 .form-input {
@@ -545,7 +495,6 @@ img { display: block; max-width: 100%; }
     text-align: center;
     margin-top: 2.5rem;
 }
-
 
 /* Post cards (posts.html) */
 .posts-grid {
@@ -691,7 +640,7 @@ img { display: block; max-width: 100%; }
 .contact-icon {
     width: 34px;
     height: 34px;
-    background: var(--icon-color, var(--accent));
+    background: var(--accent);
     color: #fff;
     border-radius: 50%;
     display: flex;
@@ -782,23 +731,14 @@ img { display: block; max-width: 100%; }
 
 .map-section { margin-top: 2rem; }
 
-.map-placeholder {
-    background: var(--bg-alt);
-    border: 1px dashed var(--border);
-    border-radius: 2px;
-    padding: 2.5rem;
-    text-align: center;
-    margin-top: 0.75rem;
-}
+.location-info { font-size: 0.88rem; color: var(--ink-2); margin-top: 0.4rem; }
 
-.map-icon {
-    width: 44px; height: 44px;
-    background: var(--icon-color, var(--accent));
-    color: #fff;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem;
-    margin: 0 auto 0.75rem;
+.location-map {
+    width: 100%;
+    height: 300px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    margin-top: 0.75rem;
 }
 
 /* ─── PAGINATION ─────────────────────────────────────── */
@@ -927,8 +867,6 @@ img { display: block; max-width: 100%; }
 
     .contact-container { grid-template-columns: 1fr; gap: 1.25rem; }
 
-    .newsletter-inner { flex-direction: column; gap: 1.25rem; align-items: flex-start; }
-    .subscribe-form { min-width: unset; width: 100%; max-width: 100%; }
 }
 
 @media (max-width: 480px) {
@@ -945,20 +883,6 @@ img { display: block; max-width: 100%; }
     }
 
     .post-row-date { display: none; }
-
-    .subscribe-group { flex-direction: column; }
-
-    .subscribe-group .form-input {
-        border-radius: 2px;
-        border-right: 1px solid var(--border);
-    }
-
-    .subscribe-group .btn {
-        border-radius: 2px;
-        border-left: 1px solid var(--ink);
-        width: 100%;
-        justify-content: center;
-    }
 
     .footer-bottom { flex-direction: column; gap: 1rem; }
 }

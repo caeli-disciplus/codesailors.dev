@@ -3,20 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const formMessage = document.getElementById('form-message');
     const header = document.querySelector('.site-header');
     const navLinks = document.querySelectorAll('.nav-link');
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-    // Set active navigation link based on current page
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        if (linkPage === currentPage || (currentPage === 'index.html' && linkPage === 'index.html')) {
-            link.classList.add('active');
-        }
-    });
-
-    // Smooth scrolling for navigation links (only for single-page sections if needed)
+    // Smooth scrolling for same-page hash links
     navLinks.forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            // Only prevent default if it's a hash link (same page)
             if (this.getAttribute('href').startsWith('#')) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
@@ -30,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     history.pushState(null, null, targetId);
                 }
             }
-            // Otherwise let the browser handle the page navigation normally
         });
     });
 
@@ -41,34 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             header.classList.remove('scrolled');
         }
-    });
-
-    // Add subtle hover animations to post cards
-    const postCards = document.querySelectorAll('.post-card');
-    postCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-            this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.1)';
-        });
-
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.05)';
-        });
-    });
-
-    // Add subtle animations to social links
-    const socialLinks = document.querySelectorAll('.social-link');
-    socialLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px)';
-            this.style.color = 'var(--accent-color)';
-        });
-
-        link.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.color = 'var(--primary-color)';
-        });
     });
 
     // Add intersection observer for smooth section animations
