@@ -8,6 +8,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("dateLong", date =>
     new Date(date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })
   );
+  eleventyConfig.addFilter("dateYear", date =>
+    new Date(date === "now" ? Date.now() : date).toLocaleDateString("en-US", { year: "numeric", timeZone: "UTC" })
+  );
 
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
 
