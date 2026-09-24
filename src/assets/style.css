@@ -130,14 +130,7 @@ img { display: block; max-width: 100%; }
 
 .hero-section {
     border-bottom: 3px solid var(--border);
-    background:
-        linear-gradient(var(--bg) 50%, transparent 50%),
-        linear-gradient(90deg, var(--bg) 50%, transparent 50%),
-        linear-gradient(0deg, var(--bg) 50%, transparent 50%),
-        linear-gradient(90deg, var(--bg) 50%, transparent 50%);
-    background-size: 100% 48px, 48px 100%, 100% 48px, 48px 100%;
-    background-color: var(--bg);
-    background-blend-mode: difference;
+    background: var(--bg);
     text-align: left;
 }
 
