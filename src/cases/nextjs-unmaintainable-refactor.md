@@ -3,7 +3,6 @@ title: "Rewriting the 3,000-line file nobody could maintain"
 excerpt: "An AI-built booking app worked fine until it needed a new feature. Then the file structure itself became the blocker — here's how it got untangled."
 category: Refactoring
 categoryFull: Refactoring
-categoryColor: "#C0451C"
 readTime: "6 min read"
 date: 2026-03-02
 tags: cases
