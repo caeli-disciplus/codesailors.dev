@@ -1,5 +1,20 @@
+const crypto = require("crypto");
+const fs = require("fs");
+const path = require("path");
+
+const assetHashes = new Map();
+
+function assetHash(filename) {
+  if (!assetHashes.has(filename)) {
+    const content = fs.readFileSync(path.join(__dirname, "src", "assets", filename));
+    assetHashes.set(filename, crypto.createHash("sha256").update(content).digest("hex").slice(0, 8));
+  }
+  return assetHashes.get(filename);
+}
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addShortcode("asset", filename => `/assets/${filename}?v=${assetHash(filename)}`);
 
   eleventyConfig.addFilter("dateShort", date =>
     new Date(date).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })
